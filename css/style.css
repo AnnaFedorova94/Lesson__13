@@ -1,0 +1,212 @@
+@import "null.css";
+/*============ Fonts ================*/
+@import url("https://fonts.googleapis.com/css?family=Lato:regular,italic,700,900,900italic&display");
+
+/* =========================================================== */
+
+body{
+	font-family: "Lato", sans-serif ;
+	background-color: #6d7673;
+	
+	
+}
+
+[class*="__container"]{
+	max-width: 1230px;
+	margin: 0 auto;
+}
+.wrapper {
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+	padding: 30px;
+}
+
+.header {
+}
+.header__title {
+	font-size: 30px;
+	font-weight:900px ;
+	color: #fff;
+	word-spacing: 5px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 30px;
+
+}
+.header__title h2{
+	animation: lilte 2s ease forwards;
+	transform: translate(0px, 100%);
+	opacity: 0;
+}
+@keyframes lilte{
+	0%{
+	}
+	100%{
+		transform: translate(0px, 0%);
+		opacity: 1;
+	}
+}
+.header__list {
+	margin-bottom: 30px;
+}
+
+.items__item{
+	position: relative;
+	padding-left: 25px;
+	transition: all 1s ease-out 0s ;
+}
+.items{
+	animation: item 1s ease 0.3s forwards;
+	transform: translate(-300px,0);
+}
+@keyframes item{
+	0%{
+	}
+	100%{
+		transform: translate(0px,0);
+	}
+}
+
+.items__item:not(:last-child){
+	margin-bottom: 10px;
+}
+.items__item::before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url('../img/icons/settings.png') 0 0 no-repeat;
+	animation-name: items-rotate;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.items__item:hover::before{
+	animation-play-state: paused;
+}
+
+.items__item:hover{
+	color: #ffffff;
+	transition: color  1s linear 0s;
+}
+
+@keyframes items-rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+/* ============================================ */
+.group {
+	display: inline-block;
+	font-size: 0;
+	margin-bottom: 30px;
+}
+.group__card {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	padding:25px 0 ;
+	vertical-align: top
+}
+
+.group__card--ping{
+	background-color: #dca39c;
+}
+.group__card--green{
+	background: #C4E769;
+}
+.group__card--blue{
+	background: #62D0DF;
+
+}
+
+.card {
+position: relative;
+}
+.card__title {
+	font-size: 16px;
+	line-height: 34px;
+	color: #FFFFFF;
+	padding-left: 40px;
+	
+}
+.card__title::before{
+	content: '';
+	position: absolute;
+	top:40px ;
+	left: 20px;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background-color: #E9B730; 
+}
+.card__title:hover::before{
+	background-color: #0f4b04; 
+	transition: background-color 1s ease 0.1s;
+}
+.card__title::after{
+	content: '';
+	position: absolute;
+	bottom: 120px;
+	left: 0;
+	width: 0%;
+	height: 3px;
+	margin: 20px;
+	background-color: #900202;
+	transition: width 0.5s ease 0s;
+}
+.card__title:hover::after{
+	width: 80%;
+}
+/* =============================== */
+.section {
+	width: 500px;
+	height: 300px;
+	background-color: #9ec6be;
+	box-shadow: inset 2px 2px 20px 2px #000;
+	position: relative;
+}
+.boll {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #E9B730;
+	animation: boll 5s linear  alternate;
+	animation-play-state: running;
+	animation-iteration-count: infinite;
+}
+.boll:hover{
+	animation-play-state: paused;
+}
+
+@keyframes boll {
+	0%{
+		transform: translate(0px,0px);
+	}
+	20%{
+		transform: translate(100px,200px);
+	}
+	40%{
+		transform: translate(300px,0px);
+		background-color: #5a0404;
+	}
+	60%{
+		transform: translate(0px,200px);
+	}
+	80%{
+		transform: translate(400px,100px);
+	}
+	100%{
+		transform: translate(200px,200px);
+	}
+}
